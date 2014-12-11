@@ -1,0 +1,16 @@
+.PHONY: build
+build: bin/test_ds_tree_main
+bin/test_ds_tree_main: obj/test_ds_tree_main.o obj/ds_tree.o
+	#gcc obj/test_ds_tree_main.o -o bin/test_ds_tree_main
+	gcc obj/test_ds_tree_main.o obj/ds_tree.o -o bin/test_ds_tree_main
+obj/test_ds_tree_main.o: src/test_ds_tree_main.c inc/ds_tree.h  obj/test_ds_tree_main.o
+	gcc -Iinc -c src/test_ds_tree_main.c -o obj/test_ds_tree_main.o
+obj/ds_tree.o: src/ds_tree.c inc/ds_tree.h obj/ds_tree.o
+	gcc -Iinc -c src/ds_tree.c -o obj/ds_tree.o
+
+rebuild: clean build
+
+.PHONY: clean
+clean: 
+	-rm obj/*
+	-rm bin/*
