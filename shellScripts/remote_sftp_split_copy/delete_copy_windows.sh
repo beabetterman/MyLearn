@@ -9,5 +9,5 @@ do
     let flag++
 done
 
-rm Debug_LGM700AT-00-V10h-GLOBAL-COM-OCT-10-2017+0_zip*
+#rm Debug_LGM700AT-00-V10h-GLOBAL-COM-OCT-10-2017+0_zip*
 #rm Debug_LGM700AT-00-V10h-GLOBAL-COM-OCT-10-2017+0.zip

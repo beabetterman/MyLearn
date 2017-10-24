@@ -11,15 +11,16 @@ die(){
     exit 1
 }
 
-[ "$#" -eq 5 ] || die "5 arguments required, user_name, password, server file_name, log_file_name $# provided"
+[ "$#" -eq 6 ] || die "5 arguments required, user_name, password, server, remote directory, file_name, log_file_name $# provided"
 
 user_name=$1;
 password=$2
 server=$3
-file_name=$4
-copy_log_name=$5
+remote_directory=$4
+file_name=$5
+copy_log_name=$6
 export HISTIGNORE="expect*"
-echo $user_name $password $server $file_name $copy_log_name 
+echo $user_name $password $server $remote_directory  $file_name $copy_log_name 
 #tmux new-window -n new_window
 #tmux select-window -t new_window
 
@@ -33,7 +34,7 @@ expect -c "
     send \"$password\r\"
     
     expect "sftp?"
-    send \"cd Temp\r\"
+    send \"cd $remote_directory\r\"
 
     expect "sftp?"
     send \"put $file_name $file_name\r\"
