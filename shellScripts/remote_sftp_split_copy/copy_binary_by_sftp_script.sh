@@ -30,8 +30,10 @@ expect -c "
     set timeout -1
     spawn sftp $user_name@$server
     
-    expect "?assword:"
-    send \"$password\r\"
+    expect {
+    "*yes\no" {send \"yes\r\";exp_continue}
+    "?assword:" {send \"$password\r\"}
+    }
     
     expect "sftp?"
     send \"cd $remote_directory\r\"
