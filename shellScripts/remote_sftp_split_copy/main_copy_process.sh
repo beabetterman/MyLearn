@@ -46,8 +46,10 @@ expect -c "
     set timeout -1
     spawn ssh $user_name@$server
 
-    expect "?assword:"
-    send \"$password\r\"
+    expect {
+    "*yes/no*" { send \"yes\r\"; exp_continue }
+    "?password:" { send \"$password\r\" }
+    }
 
     expect "?$"
     send \"touch $remote_directory\/$copy_log_name\r\"
@@ -100,8 +102,10 @@ expect -c "
     set timeout -1
     spawn ssh $user_name@$server
 
-    expect "?assword:"
-    send \"$password\r\"
+    expect {
+    "*yes/no*" { send \"yes\r\"; exp_continue }
+    "?password:" { send \"$password\r\" }
+    }
 
     expect "$?"
     send \"cd Temp\r\"

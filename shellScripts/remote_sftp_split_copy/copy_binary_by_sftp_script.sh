@@ -31,7 +31,7 @@ expect -c "
     spawn sftp $user_name@$server
     
     expect {
-    "*yes\no" {send \"yes\r\";exp_continue}
+    "*yes/no*" {send \"yes\r\";exp_continue}
     "?assword:" {send \"$password\r\"}
     }
     
