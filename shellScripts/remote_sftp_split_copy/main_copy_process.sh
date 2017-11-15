@@ -132,7 +132,7 @@ expect -c "
 ls -al "$origin_file_name_no_suffix".kdz >> abc.txt
 
 #for i in {0..$window_flag}
-for ((i=0;i<$window_flag;i++ ))
+for ((i=0;i<=$window_flag;i++ ))
 do 
     tmux kill-window -t :cw$i
 done 
