@@ -9,7 +9,7 @@ die(){
 
 # TODO set var by parameters
 user_name=zhiming.wang
-password=lgeyt123
+password=123
 server=172.28.216.20
 remote_directory="Temp" 
 #origin_file_path="Debug_LGM700AT-00-V10h-GLOBAL-COM-OCT-10-2017+0.kdz"
@@ -122,6 +122,8 @@ expect -c "
     expect "$?"
     send \"rm "$origin_file_name_no_suffix"_zip* \r\"
 
+    expect "$?"
+    send \"rm "$origin_file_name_no_suffix"\.zip \r\"
 
     expect "$?"
     send \"exit\r\"
@@ -132,7 +134,7 @@ expect -c "
 ls -al "$origin_file_name_no_suffix".kdz >> abc.txt
 
 #for i in {0..$window_flag}
-for ((i=0;i<=$window_flag;i++ ))
+for ((i=0;i<$window_flag;i++ ))
 do 
     tmux kill-window -t :cw$i
 done 
