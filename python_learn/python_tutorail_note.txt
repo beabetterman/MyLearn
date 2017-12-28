@@ -1,0 +1,122 @@
+
+再次看Python的学习笔记：
+URL: http://www.pythondoc.com/pythontutorial3/index.html
+http://www.pythondoc.com/
+
+-----------------------------------------分割线------------------------------------------------
+
+	* 函数定义规范：函数体的第一行语句可以是可选的字符串文本，这个字符串是函数的文档字符串，或者称为 docstring。
+
+		* 第一行应该是关于对象用途的简介。简短起见，不用明确的陈述对象名或类型。如果文档字符串有多行，第二行应该空出来，与接下来的详细描述明确分隔。接下来的文档应该有一或多段描述对象的调用约定、边界效应等。
+		* 具体格式需要自己调整
+	* sys.argv   实际上就是其他脚本调用当前脚本abc.py时，在abc.py中获取传入的参数的方法，这个是列表。sys.argv[0] 是被调用的脚本的地址的字符串信息。即 abc.py arg0 arg1 的语句中，abc.py内部可以通过sys.argv[0] 获得abc.py, sys.argv[1] 获得arg0, sys.argv[2] 获得arg1
+	* coding -> # -*- coding: encoding -*- 默认情况下就是UTF-8格式。 文件的编码格式说明：  也可以直接声明为当前编辑器支持的字符编码格式，具体参考Python的codecs章节，涉及到encode，decode,codeinfo等信息
+	* int, float.  / 除法返回 float,  // 是整除返回值的int部分； %取余； ** 幂乘方运算；整数和浮点的混合运算，整数自动转浮点
+	* Fraction 分数，  Decimal 小数。Decimal可以设置精度， 保证小数运算的要求的准确性，类似于手工运算。注意 只有运算的数能保证精度时，才能保证结果的精度。 https://www.cnblogs.com/godiness/p/4809413.html （eg. getcontext().prec = 30 #设置全局精度）
+	* String Python没有单独的字符类型；一个字符就是一个简单的长度为1的字符串。 
+
+		* text[3] index可正可负，负数即从右侧计数。-0 就是0，-1是最右边的字符（组成的字符串）
+		* text[1:3] 切片。 包含起始的字符，不包含末尾的字符。这使得 s[:i] + s[i:] 永远等于 s
+		* Python字符串不可以被更改 — 它们是 不可变的 。因此，赋值给字符串索引的位置会导致错误:
+		* len(text)
+		* 与其它语言不同，特殊字符例如 \n 在单引号('...')和双引号("...")中具有相同的含义。两者唯一的区别是在单引号中，你不需要转义 " （但你必须转义 \' )，反之亦然。
+		* str. 如此多的操作函数。。。   eg. "sub" in text 判断是否包含， text.find('sub')(Note: return -1 when not found) 或 text.index('sub')(Note: raise ValueError when not found) 返回 'sub'的最小的index
+		* str.format() 很多方法和情况，查看官方文档： https://docs.python.org/3/library/string.html#formatexamples 
+
+			* Basic syntax:
+			* replacement_field ::= "{" [field_name] ["!" conversion] [":" format_spec] "}"
+			field_name ::= arg_name ("." attribute_name | "[" element_index "]")*
+			arg_name ::= [identifier | integer]
+			attribute_name ::= identifierelement_index ::= integer | index_stringindex_string ::= <any source character except "]"> +
+			conversion ::= "r" | "s" | "a"
+			format_spec ::= <described in the next section>
+
+
+	* list 可以索引和切片。
+
+		* 基本操作，各种基本方法 i : index, x : element, L : list < [1,2] +[3] -> [1, 2, 3] <=> [1,2].append(3) >  
+
+			* Note  : append(x), extend(L), insert(i, x), remove(x), list.pop([i])[i]是可选的, clear(), index(x), count(x), sort(), reverse(), copy()
+			* 注意del a[:] 和 del a的区别。a.copy() <=> a[:], a.clear() <=> del a[:], a.append(x) <=> a[len(a):] = [x] similar to a.extend(L)
+		* list_n[:] 浅拷贝。切片是产生一个由切片的元素组成的新临时列表。如果list的元素是非简单类型（即引用类型），则切片中元素的引用会修改原始list中的值。
+		* 元素内容可以修改。 list_n.append('abc'),  list_n[1] = 'cba', list_n[0:3] = [] (会清空第0，1，2个元素)
+		* len(list_n)
+	* 元组 Tuple 的定义可以不用括号，eg tuple_a = 'a', 'b' 等价于 tuple_a = ('a', 'b') -> tuple_a is ('a', 'b')
+
+		* 定义空元组 emp_tup = ()
+		* 定义一个元素的元组的方法 -> 在后面加一个逗号（丑陋但是有用）： one_elm_tup = 'a', 或者 one_elm_tup = ('a', ) 
+		* 序列拆封，上例中 a1, a2 = tuple_a 
+	* 多重赋值  a,b = 0,1     a,b = b, a+b  -> 等号右边的先完成运算，运算顺序为从左到右
+	* 条件（这里是 b < 10 ）为 true 时， while 循环执行。在 Python 中，类似于 C，任何非零整数都是 true；0 是 false。条件也可以是字符串或列表，实际上可以是任何序列；所有长度不为零的是 true，空序列是 false。示例中的测试是一个简单的比较。标准比较操作符与 C 相同： < ， > ， == ， <=， >= 和 !=。
+	* str(), repr(), ''    http://www.cnpythoner.com/post/251.html
+
+		* 尽管str(),repr()和``运算在特性和功能方面都非常相似，事实上repr()和``做的是完全一样的事情，它们返回的是一个对象的“官方”字符串表示，也就是说绝大多数情况下可以通过求值运算（使用内建函数eval()）重新得到该对象。
+		* 但str()则有所不同，str()致力于生成一个对象的可读性好的字符串表示，它的返回结果通常无法用于eval()求值，但很适合用于print语句输出。需要再次提醒的是，并不是所有repr()返回的字符串都能够用 eval()内建函数得到原来的对象。
+		* 也就是说 repr() 输出对 Python比较友好，而str()的输出对用户比较友好。
+	* range()函数是经常用于for循环的一个方便的数值列（链表）。但他返回的本身并不是一个列表。如果需要链表则要显式的转化 list(range(0,10,2))
+	* else 在非if语句后的使用 : 循环和try. 
+
+		* 与循环一起使用的else 子句与 try 语句的 else 子句有很多的共同点：
+
+			* try 语句的 else 子句在未出现异常时运行，更多关于 try 语句和异常的内容，请参见 异常处理。
+			* 循环的 else 子句在未出现 break 时运行（即(1) for循环遍历结束, (2) while 执行条件为False）。
+	* pass 什么也不做。用于语法上需要做些事情，但是暂时不需要做任何事情的场合。eg 单纯的无限循环 和 定义暂时不实现的函数，注意加comment # TODO。
+	* 函数参数：位置参数和关键字参数。在函数调用中，关键字的参数必须跟随在位置参数的后面。
+
+		* 默认值：默认值只被赋值一次。如果默认值是可变对象（列表、字典和大部分类的实例），这可能会导致变化累计！！谨慎对待！
+
+			* 解决方法之一是：将这类的默认值设置为None,然后在函数里判断，如果是None则将其赋值为默认值
+		* 关键字参数
+		* 形参中，引入一个形如 **name 的参数时，它接收一个字典（参见 Mapping Types — dict ），该字典包含了所有未出现在形式参数列表中的关键字参数。这里可能还会组合使用一个形如 *name 的形式参数，它接收一个元组。两者包含了所有没有出现在形式参数列表中的参数值（ *name 必须在 **name 之前出现）-> PS:思想下为什么是这样的。
+		* 形参中，所有的参数列表都可以认为是def fun_a(abc, *tuple_arg, **dict_arg)的一个特例。
+		* 实参中，参数列表的分拆。即调用时直接使用列表和字典做实参。使用方法 -> 调用函数fun_a  例子： a = fun_a('position_arg0', *list_name， **dict_name)
+	* lambda 匿名函数 lambda arguments : expression -> def <lambda>(arguments):  换行 return expression
+	* 几个编码建议：
+
+		* 折行以确保其不会超过 79 个字符
+		* 可能的话，注释独占一行
+		* 使用文档字符串
+		* 把空格放到操作符两边，以及逗号后面，但是括号里侧不加空格：a = f(1, 2) + g(3, 4)
+		* 统一函数和类命名
+推荐类名用 驼峰命名， 函数和方法名用 小写_和_下划线。总是用 self 作为方法的第一个参数
+	* del 通过index删除， 删除slice，删除整个 list 都可以
+	* 序列拆封： x, y, z = t 这个调用等号右边可以是任何线性序列，称之为 序列拆封 非常恰当。序列拆封要求左侧的变量数目与序列的元素个数相同。
+	* 列表推导式 （列表推导式为从序列中创建列表提供了一个简单的方法。）
+
+		* 列表推导式由包含一个表达式的中括号组成，表达式后面跟随一个 for 子句，之后可以有零或多个 for 或 if 子句。结果是一个列表，由表达式依据其后面的 for 和 if 子句上下文计算而来的结果构成。eg. [(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]
+		* 例子： 对一个列表中的元素进行求平方操作的实现：
+
+			* squares = [x**2 for x in range(10)] <=> squares = list(map(lambda x: x**2, range(10)))
+		* 嵌套的列表推导式，类似于矩阵运算。
+
+			* [[row[i] for row in matrix] for i in range(4)] 简化格式为：list(zip(*matrix))
+	* 集合 set，是无序不重复元素的集。set_a = {'a', 'b', 'c'}
+
+		* 创建空set的方法是set_a = set() -> 因为{} 被用来定义创建空字典了！！
+		* 支持 联合 union，交 intersection，差difference，对称差集 sysmmetric difference
+		* 集合推导式。 eg. a = {x for x in 'abracadabra' if x not in 'abc'}
+	* 字典 dict， 序列是以连续的整数为索引，与此不同的是，字典以 关键字 为索引，关键字可以是任意不可变类型，通常用字符串或数值。如果元组中只包含字符串和数字，它可以做为关键字，如果它直接或间接的包含了可变对象，就不能当做关键字。
+
+		* dict_a = dict(sape=4139, guido=4127, jack=4098) <=> dict_a = {'sape': 4139, 'jack': 4098, 'guido': 4127}
+		* list(dict_a.keys())  ,  sorted(dict_a.keys()),  dict_a.item() in 确认是否由对应key值的元素
+	* 循环技巧：
+
+		* for k,v in dict_a.items:    
+		* for i,v in enumerate(['abc', 'def', 'g']):
+		* 同时循环两个或更多的序列，可以使用zip进行打包操作。  for q,p in zip(list_a, list_b):
+	* zip 将多个可迭代的元素 组合成一个可迭代的元组。即每个迭代器的元素对应位置的元素组成一个大的元组。
+
+		* 所有迭代器的最小length决定新的超级迭代组的长度
+	* enumerate类似于 zip(range(len(a)), a)
+	* 判断条件
+
+		* 比较操作符 in 和 not in 审核值是否在一个区间之内。操作符 is 和 is not 比较两个对象是否相同（对于复杂对象，判断的是引用值）；这只和诸如列表这样的可变对象有关。所有的比较操作符具有相同的优先级，低于所有的数值操作。
+		* 比较操作可以传递。例如 a < b == c 审核是否 a 小于 b 并且 b 等于 c。
+		* 比较操作可以通过逻辑操作符 not, and 和 or 组合。优先级： not > and > or
+		* python中and 相当于 java的&&， or 相当于 || ，参数从左向右解析，一旦结果可以确定就停止。
+		* 需要注意的是 Python ，在表达式内部不能赋值。
+	* 序列对象可以与相同类型的其它对象比较。比较操作按 字典序 进行，类似于字符串排序的情况。
+	* 
+
+
+
