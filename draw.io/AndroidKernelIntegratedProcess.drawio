@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2019-11-08T01:31:43.809Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36" etag="5t704rGUG7by9EbQuAMO" version="12.2.2" type="github" pages="1">
+<mxfile host="www.draw.io" modified="2019-11-08T01:32:31.484Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36" etag="DopApJ3gft9f8msHjilg" version="12.2.2" type="github" pages="1">
   <diagram id="kgOiKqjmY7E-eNFTO_uU" name="Page-1">
     <mxGraphModel dx="1408" dy="748" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -86,8 +86,8 @@
         <mxCell id="LInNzG0QfI24UNhKXFxT-33" value="&lt;div&gt;la_system.img.sparse&lt;/div&gt;&lt;div&gt;userdata.img.sparse&lt;/div&gt;&lt;div&gt;vendor.img.sparse&lt;/div&gt;&lt;div&gt;cache.img.sparse&lt;/div&gt;&lt;div&gt;la_persist.img&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="685" y="610" width="120" height="140" as="geometry"/>
         </mxCell>
-        <mxCell id="LInNzG0QfI24UNhKXFxT-34" value="&lt;span style=&quot;&quot;&gt;As discuss before, not share kernel image to HQ&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontColor=#CC0000;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="687.5" y="870" width="120" height="60" as="geometry"/>
+        <mxCell id="LInNzG0QfI24UNhKXFxT-34" value="&lt;span style=&quot;font-size: 15px&quot;&gt;As discuss before, kernel image not share to HQ&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontColor=#CC0000;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="660" y="870" width="170" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="LInNzG0QfI24UNhKXFxT-40" value="&lt;div&gt;la_system.img.sparse&lt;/div&gt;&lt;div&gt;userdata.img.sparse&lt;/div&gt;&lt;div&gt;vendor.img.sparse&lt;/div&gt;&lt;div&gt;cache.img.sparse&lt;/div&gt;&lt;div&gt;la_persist.img&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="435" y="300" width="120" height="140" as="geometry"/>
