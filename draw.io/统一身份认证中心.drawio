@@ -1,1 +1,55 @@
-<mxfile host="app.diagrams.net" modified="2021-07-31T09:34:27.798Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36" version="14.9.3" etag="XLhL8Tu_qmW2NMbOYRHU" type="github"><diagram id="m5c8QIhB4_5hhPuWgGWi">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-08-02T04:04:43.276Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36" etag="VRd14Gm9xP8_pOswm8-K" version="14.9.3" type="github">
+  <diagram id="m5c8QIhB4_5hhPuWgGWi" name="Page-1">
+    <mxGraphModel dx="1038" dy="547" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="UI9DF7ZkgImTVSZ9xoxi-1" value="" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="160" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="UI9DF7ZkgImTVSZ9xoxi-2" value="设备集1" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="180" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="UI9DF7ZkgImTVSZ9xoxi-3" value="设备集2" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="200" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="UI9DF7ZkgImTVSZ9xoxi-4" value="设备集3" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="270" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="UI9DF7ZkgImTVSZ9xoxi-5" value="灯杆设备" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="170" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="UI9DF7ZkgImTVSZ9xoxi-6" value="" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="160" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="UI9DF7ZkgImTVSZ9xoxi-7" value="设备集1" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="180" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="UI9DF7ZkgImTVSZ9xoxi-8" value="设备集2" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="200" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="UI9DF7ZkgImTVSZ9xoxi-9" value="设备集3" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="270" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="UI9DF7ZkgImTVSZ9xoxi-10" value="灯杆设备" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="650" y="170" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="UI9DF7ZkgImTVSZ9xoxi-11" value="" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="890" y="160" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="UI9DF7ZkgImTVSZ9xoxi-12" value="设备集1" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="940" y="180" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="UI9DF7ZkgImTVSZ9xoxi-13" value="设备集2" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="200" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="UI9DF7ZkgImTVSZ9xoxi-14" value="设备集3" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="940" y="270" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="UI9DF7ZkgImTVSZ9xoxi-15" value="灯杆设备" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="170" width="60" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
